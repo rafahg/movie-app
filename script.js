@@ -1,5 +1,7 @@
 
-const APIURL = 'https://api.themoviedb.org/3/discover/movie?api_key=096a8f27ba37517c7440bf4f99d983d2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
+
+
+const APIURL = 'https://api.themoviedb.org/3/discover/movie?api_key=' + APIKEY + '&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
 
 const IMGPATH = 'https://image.tmdb.org/t/p/w1280';
 
@@ -23,7 +25,7 @@ async function getMovies() {
         />
         <div class="movie-info">
             <h3>${title}</h3>
-            <span>${vote_average}</span>
+            <span class="${getClassByRate(vote_average)}">${vote_average}</span>
 
         </div>`;
         
@@ -37,6 +39,14 @@ async function getMovies() {
   return respData;
 }
 
-
+function getClassByRate(vote) {
+  if(vote >= 8) {
+    return 'green'
+  } else if (vote >=5){
+      return 'orange';
+  } else {
+    return 'red';
+  }
+}
 
 getMovies();

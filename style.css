@@ -32,7 +32,7 @@ main {
 .movie-info {
   color: white;
   display: flex;
-  alig-items: center;
+  align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem 1rem;
   letter-spacing: 1px;
@@ -46,4 +46,16 @@ main {
   background-color: #22254b;
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
+}
+
+.movie-info span.green {
+  color: green;
+}
+
+.movie-info span.orange {
+  color: orange;
+}
+
+.movie-info span.red {
+  color: red;
 }
